@@ -17,7 +17,7 @@
 # You should have received a copy of the GNU Affero General Public License along
 # with this program. If not, see <http://www.gnu.org/licenses/>.
 
-ruby '3.3'
+ruby '3.3.6'
 source "https://rubygems.org"
 
 gem "bootsnap", "~> 1.0", require: false
