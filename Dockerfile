@@ -23,8 +23,7 @@ RUN echo "deb http://apt.postgresql.org/pub/repos/apt/ $(lsb_release -cs)-pgdg m
 
 RUN if [ "$DEV_BUILD" = 'true' ]; then apt-get update && apt-get install -y xvfb; fi
 
-# COPY config/nginx/location.conf /usr/src/nginx/location.d/location.conf
-COPY config/nginx/location.conf /usr/src/nginx/location.d/
+COPY config/nginx/location.conf /usr/src/nginx/location.d/location.conf
 
 RUN if [ "$DEV_BUILD" = 'true' ]; then echo 'docker ALL=(ALL) NOPASSWD: SETENV: /usr/sbin/update-ca-certificates' >> /etc/sudoers; fi
 
@@ -54,7 +53,7 @@ RUN if [ "$DEV_BUILD" = 'false' ]; then BUNDLER_ARGS='--without development test
   bundle install --jobs 8 $BUNDLER_ARGS
 
 RUN mkdir -p tmp
-COPY --chown=docker:docker . $APP_HOME
+COPY --chown=docker:docker . $APP_HOME/
 
 # RUN RAILS_ENV=production \
 #   DATABASE_URL=postgres://user:pass@127.0.0.1/does_not_exist_dbname \
