@@ -53,7 +53,8 @@ RUN if [ "$DEV_BUILD" = 'false' ]; then BUNDLER_ARGS='--without development test
   bundle install --jobs 8 $BUNDLER_ARGS
 
 RUN mkdir -p tmp
-COPY --chown=docker:docker . $APP_HOME/
+COPY --chown=docker:docker . $APP_HOME
+COPY . $APP_HOME/
 
 # RUN RAILS_ENV=production \
 #   DATABASE_URL=postgres://user:pass@127.0.0.1/does_not_exist_dbname \
