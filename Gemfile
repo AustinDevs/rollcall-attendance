@@ -25,7 +25,8 @@ gem "bundler", ">= 2.4.16"
 gem "rack", "~> 2.1"
 gem "rails", "7.0.7"
 
-gem "thin", "~> 1.7.0"
+# gem "thin", "~> 1.7.0"
+gem "puma"
 
 gem "canvas_oauth_engine", "~> 2.4.0", require: "canvas_oauth"
 gem "httparty", "~> 0.17.0"
@@ -93,7 +94,7 @@ group :test do
   gem "webmock", "3.19.1"
   # Capybara-webkit breaks with capybara 3, so we'll stay at the latest version 2
   gem "capybara", "~> 3.39"
-  gem "puma"
+  # gem "puma"
   # upgrades are unstable for getting webkit running in all test environments,
   # will need to upgrade capybara-webkit as it's own commit and step up background
   # dependencies (like QT & xvfb) on all platforms that run cucumber tests as part of a single
