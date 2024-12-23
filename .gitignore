@@ -40,7 +40,7 @@ config/lti.yml
 config/redis.yml
 config/s3.yml
 config/sentry.yml
-# config/database.yml
+config/database.yml
 config/mail.yml
 
 # Ignore the maintenance page trigger file
