@@ -8,4 +8,5 @@ production:
   password: <%= ENV["DATABASE_PASSWORD"] %>
   host: <%= ENV["DATABASE_ADDRESS"] %>
   port: <%= ENV["DATABASE_PORT"] %>
+  database: <%= ENV["DATABASE_NAME"] %>
 
